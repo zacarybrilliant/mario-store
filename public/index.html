@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario Store POS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast"></div>
+
+  <section id="loginScreen" class="login-screen">
+    <div class="login-card">  
+      <div class="brand-mark">MS</div>
+      <h1>Mario Store</h1>
+      <p class="muted">POS & Inventory System</p>
+      <form id="loginForm">
+        <label>Email</label>
+        <input id="loginEmail" type="email" placeholder="" required>
+        <label>Password</label>
+        <input id="loginPassword" type="password" placeholder="Password" required>
+        <button class="primary full" type="submit">Sign In</button>
+      </form>
+    </div>
+  </section>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="side-brand">
+        <div class="brand-mark small">MS</div>
+        <div><strong>Mario Store</strong><small>Management</small></div>
+      </div>
+      <nav id="nav">
+        <button data-page="dashboard" class="nav-item active">▦ <span>Dashboard</span></button>
+        <button data-page="pos" class="nav-item">▣ <span>POS / Sales</span></button>
+        <button data-page="inventory" class="nav-item">▤ <span>Inventory</span></button>
+        <button data-page="reports" class="nav-item owner-only">◫ <span>Sales Reports</span></button>
+        <button data-page="users" class="nav-item owner-only">♙ <span>Tindero Accounts</span></button>
+        <button data-page="backup" class="nav-item owner-only">↕ <span>Backup / Restore</span></button>
+      </nav>
+      <div class="side-user">
+        <div class="avatar" id="sideAvatar">O</div>
+        <div>
+          <strong id="sideName">Owner</strong>
+          <small id="sideRole">Owner</small>
+        </div>
+        <button id="logoutBtn" class="icon-btn" title="Logout">↪</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="mobileMenu" class="icon-btn mobile-only">☰</button>
+        <div>
+          <h2 id="pageTitle">Dashboard</h2>
+          <p id="pageSubtitle">Overview of your store</p>
+        </div>
+        <div class="top-actions">
+          <span id="currentDate" class="date-pill"></span>
+          <span id="roleBadge" class="role-badge">Owner</span>
+        </div>
+      </header>
+
+      <div id="pageContent" class="content"></div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="modalTitle"></h3>
+        <button id="modalClose" class="icon-btn">×</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="offline-sync.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

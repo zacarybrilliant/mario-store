@@ -1,0 +1,23 @@
+{
+  "name": "mario-store-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mario Store POS with XAMPP MySQL/MariaDB, Node.js API, bcrypt password hashing, and offline sale queue",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "create-owner": "node server/create-owner.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1"
+  }
+}
